@@ -22,7 +22,7 @@
         }
     ],
     "paths": {
-        "/api/register": {
+        "/api/registro": {
             "post": {
                 "tags": [
                     "Auth"
@@ -39,9 +39,9 @@
                                         "description": "Enter your name",
                                         "type": "string"
                                     },
-                                    "email": {
-                                        "description": "Enter your Email",
-                                        "type": "email"
+                                    "userName": {
+                                        "description": "Enter your User Name",
+                                        "type": "userName"
                                     },
                                     "password": {
                                         "description": "Enter your password",
@@ -64,7 +64,7 @@
                 }
             }
         },
-        "/api/login": {
+        "/api/acceso": {
             "post": {
                 "tags": [
                     "Auth"
@@ -77,8 +77,8 @@
                         "application/x-www-form-urlencoded": {
                             "schema": {
                                 "properties": {
-                                    "email": {
-                                        "description": "Enter your email",
+                                    "userName": {
+                                        "description": "Enter your userName",
                                         "type": "string"
                                     },
                                     "password": {

@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('/register', [\App\Http\Controllers\AuthController::class, 'Register']);
-Route::post('/login', [\App\Http\Controllers\AuthController::class, 'Login']);
+Route::post('/registro', [\App\Http\Controllers\AuthController::class, 'Register']);
+Route::post('/acceso', [\App\Http\Controllers\AuthController::class, 'Login']);
 Route::group(['middleware'=> ['auth:sanctum']], function(){
     //Route::get('/products', [\App\Http\Controllers\ApiController::class, 'Products']);
     //Route::post('/storeproducts', [\App\Http\Controllers\ApiController::class, 'storeProducts']);

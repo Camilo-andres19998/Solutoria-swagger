@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {/**
      * @OA\Post(
-     *     path="/api/register",
+     *     path="/api/registro",
      *     tags={"Auth"},
      *     summary="Registrate",
      *     operationId="Register",
@@ -30,9 +30,9 @@ class AuthController extends Controller
      *                     type="string",
      *                 ),
      *                 @OA\Property(
-     *                     property="email",
-     *                     description="Enter your Email",
-     *                     type="email"
+     *                     property="userName",
+     *                     description="Enter your User Name",
+     *                     type="userName"
      *                 ),
      *                 @OA\Property(
      *                     property="password",
@@ -58,7 +58,7 @@ class AuthController extends Controller
 
         $fields = $request->validate([
             'name'=>'required|string',
-            'email'=>'required|string|unique:users,email',
+            'userName'=>'required|string|unique:users,userName',
             'password'=>'required|string',
         ]);
 
@@ -68,7 +68,7 @@ class AuthController extends Controller
 
         $user = new User();
         $user->name = $fields['name'];
-        $user->email = $fields['email'];
+        $user->userName = $fields['userName'];
         $user->password = bcrypt($fields['password']);
         $user->save();
         $token = $user->createToken('myapptoken')->plainTextToken;
@@ -86,7 +86,7 @@ class AuthController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/api/login",
+     *     path="/api/acceso",
      *     tags={"Auth"},
      *     summary="Authentificate",
      *     operationId="Login",
@@ -102,8 +102,8 @@ class AuthController extends Controller
      *             @OA\Schema(
      *                 type="object",
      *                 @OA\Property(
-     *                     property="email",
-     *                     description="Enter your email",
+     *                     property="userName",
+     *                     description="Enter your userName",
      *                     type="string",
      *                 ),
      *                 @OA\Property(
@@ -111,7 +111,7 @@ class AuthController extends Controller
      *                     description="Enter password",
      *                     type="password"
      *                 ),
-     * 
+     *
      *             )
      *         )
      *     )
@@ -119,10 +119,10 @@ class AuthController extends Controller
      */
     public function Login(Request $request){
         $fields = $request->validate([
-            'email'=>'required',
+            'userName'=>'required',
             'password'=>'required'
         ]);
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('userName', $request->userName)->first();
         if(!$user||!Hash::check($fields['password'], $user->password)){
             return response()->json('password or login is incorrect');
         }
