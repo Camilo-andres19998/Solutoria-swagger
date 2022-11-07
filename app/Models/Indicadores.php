@@ -16,8 +16,7 @@ class Indicadores extends Model
         'nombreIndicador',
         'codigoIndicador',
         'unidadMedidaIndicador',
-        'valorIndicador',
-        'fecha',
+       
         //'fechaIndicador'
     ];
 
