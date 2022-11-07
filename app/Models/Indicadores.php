@@ -9,16 +9,23 @@ class Indicadores extends Model
 {
     use HasFactory;
 
-
-    protected $table = 'indicadores';
+   // protected $indicador;
+    protected $table = "indicadores";
 
     protected $fillable = [
         'nombreIndicador',
         'codigoIndicador',
         'unidadMedidaIndicador',
         'valorIndicador',
-        'fechaIndicador'
+        'fecha',
+        //'fechaIndicador'
     ];
-}
+
+
+
+
+
+    }
+
 
 

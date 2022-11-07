@@ -47,7 +47,7 @@ return [
     ],
 
 
-    
+
     'defaults' => [
         'routes' => [
             /*
@@ -218,7 +218,6 @@ return [
                         'read',
                         'write'
                     ],
-
                     'passport' => []
                     */
                 ],

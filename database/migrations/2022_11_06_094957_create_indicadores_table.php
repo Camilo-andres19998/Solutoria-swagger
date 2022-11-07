@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('codigoIndicador');
             $table->string('unidadMedidaIndicador');
             $table->integer('valorIndicador')->nullable();
-            $table->string('fechaIndicador');
+            $table->string('fecha');
+            //$table->date('fechaIndicador');
             $table->timestamps();
         });
     }

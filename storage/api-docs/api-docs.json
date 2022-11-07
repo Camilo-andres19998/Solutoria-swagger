@@ -97,6 +97,98 @@
                     }
                 }
             }
+        },
+        "/api/indicadores": {
+            "get": {
+                "tags": [
+                    "Indicadores"
+                ],
+                "summary": "All indicadores",
+                "description": "Multiple status values can be provided with comma separated string",
+                "operationId": "findPetsByStatus",
+                "parameters": [
+                    {
+                        "name": "indicadores",
+                        "in": "query",
+                        "description": "All indicadores",
+                        "required": true,
+                        "explode": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "available",
+                            "enum": [
+                                "available",
+                                "pending",
+                                "sold"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
+        },
+        "/api/storeindicadores": {
+            "post": {
+                "tags": [
+                    "Indicadores"
+                ],
+                "summary": "Updates or create Indicadores",
+                "operationId": "storeIndicadores",
+                "requestBody": {
+                    "description": "Input data format",
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "properties": {
+                                    "nombreIndicador": {
+                                        "description": "Updated name of the indicador",
+                                        "type": "string"
+                                    },
+                                    "codigoIndicador": {
+                                        "description": "Updated name of the indicador",
+                                        "type": "string"
+                                    },
+                                    "unidadMedidaIndicador": {
+                                        "description": "Updated name of the indicador",
+                                        "type": "string"
+                                    },
+                                    "valorIndicador": {
+                                        "description": "Enter indicador value",
+                                        "type": "integer"
+                                    },
+                                    "fecha": {
+                                        "description": "Enter indicador date",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_token": []
+                    }
+                ]
+            }
         }
     },
     "components": {
