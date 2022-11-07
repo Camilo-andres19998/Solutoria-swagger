@@ -98,7 +98,7 @@
                 }
             }
         },
-        "/api/indicadores": {
+        "/api/gets": {
             "get": {
                 "tags": [
                     "Indicadores"
@@ -139,13 +139,13 @@
                 ]
             }
         },
-        "/api/storeindicadores": {
+        "/api/store": {
             "post": {
                 "tags": [
                     "Indicadores"
                 ],
                 "summary": "Updates or create Indicadores",
-                "operationId": "storeIndicadores",
+                "operationId": "store",
                 "requestBody": {
                     "description": "Input data format",
                     "content": {
@@ -153,23 +153,15 @@
                             "schema": {
                                 "properties": {
                                     "nombreIndicador": {
-                                        "description": "Updated name of the indicador",
+                                        "description": "Updated name of the pet",
                                         "type": "string"
                                     },
                                     "codigoIndicador": {
-                                        "description": "Updated name of the indicador",
+                                        "description": "Enter product price",
                                         "type": "string"
                                     },
                                     "unidadMedidaIndicador": {
-                                        "description": "Updated name of the indicador",
-                                        "type": "string"
-                                    },
-                                    "valorIndicador": {
-                                        "description": "Enter indicador value",
-                                        "type": "integer"
-                                    },
-                                    "fecha": {
-                                        "description": "Enter indicador date",
+                                        "description": "Enter product quantity",
                                         "type": "string"
                                     }
                                 },

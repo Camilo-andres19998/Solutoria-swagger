@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/registro', [\App\Http\Controllers\AuthController::class, 'Register']);
 Route::post('/acceso', [\App\Http\Controllers\AuthController::class, 'Login']);
 Route::group(['middleware'=> ['auth:sanctum']], function(){
-    Route::get('/indicadores', [\App\Http\Controllers\IndicadorsController::class, 'Indicadors']);
-    Route::post('/storeindicadores', [\App\Http\Controllers\IndicadorsController::class, 'storeIndicadores']);
+    Route::get("/get/{id}",[\App\Http\Controllers\IndicadorsController::class, 'gets']);
+    Route::post("/store",[\App\Http\Controllers\IndicadorsController::class,'store']);
+   // Route::post('/storeindicadores', [\App\Http\Controllers\IndicadorsController::class, 'storeIndicadores']);
 });

@@ -12,14 +12,41 @@ class Indicadores extends Model
    // protected $indicador;
     protected $table = "indicadores";
 
-    protected $fillable = [
-        'nombreIndicador',
-        'codigoIndicador',
-        'unidadMedidaIndicador',
-       
-        //'fechaIndicador'
-    ];
+    /**
+     * @param array $attributes
+     * @return Indicadores
+     */
+    public function createTodo(array $attributes){
+        $indicador = new self();
+        $indicador->nombreIndicador = $attributes["nombreIndicador"];
+        $indicador->codigoIndicador = $attributes["codigoIndicador"];
+        $indicador->unidadMedidaIndicador = $attributes["unidadMedidaIndicador"];
+        $indicador->save();
+        return $indicador;
+    }
 
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public function getTodo(int $id){
+        $indicador = $this->where("id",$id)->first();
+        return $indicador;
+    }
+
+    /**
+     * @return Indicadores[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function getsTodo(){
+        $indicadores = $this::all();
+        return $indicadores;
+    }
+
+    /**
+     * @param int $id
+     * @param array $attributes
+     * @return mixed
+     */
 
 
 

@@ -7,16 +7,19 @@ use Illuminate\Http\Request;
 
 class IndicadorsController extends Controller
 {
+    protected $indicador;
+
+    public function __construct(Indicadores $indicador){
+        $this->indicador = $indicador;
 
 
 
+    }
 
 
-
-
-    /**
+      /**
      * @OA\Get(
-     *     path="/api/indicadores",
+     *    path="/api/gets",
      *     tags={"Indicadores"},
      *     summary="All indicadores",
      *     description="Multiple status values can be provided with comma separated string",
@@ -47,19 +50,23 @@ class IndicadorsController extends Controller
      *     },
      * )
      */
-    public function Indicadors(){
-        $model = Indicadores::all();
-        return response()->json($model);
+
+    public function gets(){
+        $indicador = Indicadores::all();
+        return response()->json($indicador);
     }
 
 
 
-     /**
+
+
+
+/**
      * @OA\Post(
-     *     path="/api/storeindicadores",
+     *     path="/api/store",
      *     tags={"Indicadores"},
      *     summary="Updates or create Indicadores",
-     *     operationId="storeIndicadores",
+     *     operationId="store",
      *     @OA\Response(
      *         response=405,
      *         description="Invalid input"
@@ -75,29 +82,17 @@ class IndicadorsController extends Controller
      *                 type="object",
      *                 @OA\Property(
      *                     property="nombreIndicador",
-     *                     description="Updated name of the indicador",
+     *                     description="Updated name of the pet",
      *                     type="string",
      *                 ),
-     *                   @OA\Property(
+     *                 @OA\Property(
      *                     property="codigoIndicador",
-     *                     description="Updated name of the indicador",
-     *                     type="string",
+     *                     description="Enter product price",
+     *                     type="string"
      *                 ),
-     *                     @OA\Property(
+     *                 @OA\Property(
      *                     property="unidadMedidaIndicador",
-     *                     description="Updated name of the indicador",
-     *                     type="string",
-     *                 ),
-     *
-     *
-     *                 @OA\Property(
-     *                     property="valorIndicador",
-     *                     description="Enter indicador value",
-     *                     type="integer"
-     *                 ),
-     *                 @OA\Property(
-     *                     property="fecha",
-     *                     description="Enter indicador date",
+     *                     description="Enter product quantity",
      *                     type="string"
      *                 )
      *             )
@@ -105,22 +100,27 @@ class IndicadorsController extends Controller
      *     )
      * )
      */
-
-
-
-    public function storeIndicadores(Request $request){
-        $model = new Indicadores();
-        $model->nombreIndicador = $request->nombreIndicador;
-        $model->codigoIndicador = $request->codigoIndicador;
-        $model->unidadMedidaIndicador = $request->unidadMedidaIndicador;
-        $model->valorIndicador = $request->valorIndicador;
-        $model->fecha = $request->fecha;
-        $model->save();
+    public function store(Request $request){
+        $indicador = new Indicadores();
+        $indicador->nombreIndicador = $request->nombreIndicador;
+        $indicador->codigoIndicador = $request->codigoIndicador;
+        $indicador->unidadMedidaIndicador = $request->unidadMedidaIndicador;
+        $indicador->save();
         $response = [
-            'data'=>$model,
+            'data'=>$indicador,
             'status'=>'success'
         ];
         return response()->json($response);
     }
 }
+
+
+
+
+
+
+
+
+
+
 
