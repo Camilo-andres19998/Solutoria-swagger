@@ -98,48 +98,7 @@
                 }
             }
         },
-        "/api/gets": {
-            "get": {
-                "tags": [
-                    "Indicadores"
-                ],
-                "summary": "All indicadores",
-                "description": "Multiple status values can be provided with comma separated string",
-                "operationId": "findPetsByStatus",
-                "parameters": [
-                    {
-                        "name": "indicadores",
-                        "in": "query",
-                        "description": "All indicadores",
-                        "required": true,
-                        "explode": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "available",
-                            "enum": [
-                                "available",
-                                "pending",
-                                "sold"
-                            ]
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "successful operation"
-                    },
-                    "400": {
-                        "description": "Invalid status value"
-                    }
-                },
-                "security": [
-                    {
-                        "bearer_token": []
-                    }
-                ]
-            }
-        },
-        "/api/store": {
+        "/api/indicadores": {
             "post": {
                 "tags": [
                     "Indicadores"
@@ -162,6 +121,14 @@
                                     },
                                     "unidadMedidaIndicador": {
                                         "description": "Enter product quantity",
+                                        "type": "string"
+                                    },
+                                    "valorIndicador": {
+                                        "description": "valor del indicador",
+                                        "type": "integer"
+                                    },
+                                    "fechaIndicador": {
+                                        "description": " fecha del indicador",
                                         "type": "string"
                                     }
                                 },

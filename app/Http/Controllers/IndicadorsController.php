@@ -17,53 +17,10 @@ class IndicadorsController extends Controller
     }
 
 
-      /**
-     * @OA\Get(
-     *    path="/api/gets",
-     *     tags={"Indicadores"},
-     *     summary="All indicadores",
-     *     description="Multiple status values can be provided with comma separated string",
-     *     operationId="findPetsByStatus",
-     *     @OA\Parameter(
-     *         name="indicadores",
-     *         in="query",
-     *         description="All indicadores",
-     *         required=true,
-     *         explode=true,
-     *         @OA\Schema(
-     *             default="available",
-     *             type="string",
-     *             enum={"available", "pending", "sold"},
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="successful operation",
-     *
-     *     ),
-     *     @OA\Response(
-     *         response=400,
-     *         description="Invalid status value"
-     *     ),
-     *      security={
-     *         {"bearer_token": {}}
-     *     },
-     * )
-     */
-
-    public function gets(){
-        $indicador = Indicadores::all();
-        return response()->json($indicador);
-    }
-
-
-
-
-
 
 /**
      * @OA\Post(
-     *     path="/api/store",
+     *     path="/api/indicadores",
      *     tags={"Indicadores"},
      *     summary="Updates or create Indicadores",
      *     operationId="store",
@@ -94,7 +51,17 @@ class IndicadorsController extends Controller
      *                     property="unidadMedidaIndicador",
      *                     description="Enter product quantity",
      *                     type="string"
-     *                 )
+     *                 ),
+     *                  @OA\Property(
+     *                     property="valorIndicador",
+     *                     description="valor del indicador",
+     *                     type="integer"
+     *                 ),
+     *                  @OA\Property(
+     *                     property="fechaIndicador",
+     *                     description=" fecha del indicador",
+     *                     type="string"
+     *                 ),
      *             )
      *         )
      *     )
@@ -105,6 +72,8 @@ class IndicadorsController extends Controller
         $indicador->nombreIndicador = $request->nombreIndicador;
         $indicador->codigoIndicador = $request->codigoIndicador;
         $indicador->unidadMedidaIndicador = $request->unidadMedidaIndicador;
+        $indicador->valorIndicador = $request->valorIndicador;
+        $indicador->fechaIndicador = $request->fechaIndicador;
         $indicador->save();
         $response = [
             'data'=>$indicador,
@@ -113,6 +82,8 @@ class IndicadorsController extends Controller
         return response()->json($response);
     }
 }
+
+
 
 
 

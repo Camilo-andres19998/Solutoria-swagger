@@ -21,6 +21,8 @@ class Indicadores extends Model
         $indicador->nombreIndicador = $attributes["nombreIndicador"];
         $indicador->codigoIndicador = $attributes["codigoIndicador"];
         $indicador->unidadMedidaIndicador = $attributes["unidadMedidaIndicador"];
+        $indicador->valorIndicador = $attributes["valorIndicador"];
+        $indicador->fechaIndicador = $attributes["fechaIndicador"];
         $indicador->save();
         return $indicador;
     }
