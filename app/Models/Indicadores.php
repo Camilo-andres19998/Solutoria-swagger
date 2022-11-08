@@ -11,7 +11,11 @@ class Indicadores extends Model
 
    // protected $indicador;
     protected $table = "indicadores";
+    protected $fillable = [
+          'nombreIndicador','codigoIndicador','unidadMedidaIndicador','valorIndicador','fechaIndicador'
+    ];
 
+    public $timestamps = false;
     /**
      * @param array $attributes
      * @return Indicadores

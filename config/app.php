@@ -181,6 +181,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Yajra\DaTatables\DaTatablesServiceProvider::class,
 
 
         /*
@@ -188,7 +189,7 @@ return [
          */
 
         L5Swagger\L5SwaggerServiceProvider::class,
-        
+
         /*
          * Application Service Providers...
          */
@@ -213,6 +214,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'DataTable' => Yajra\DaTatables\Facades\DataTables::class,
     ])->toArray(),
 
 ];

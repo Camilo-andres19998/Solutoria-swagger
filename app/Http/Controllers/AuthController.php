@@ -10,7 +10,7 @@ class AuthController extends Controller
 {/**
      * @OA\Post(
      *     path="/api/registro",
-     *     tags={"Auth"},
+     *     tags={"Token"},
      *     summary="Registrate",
      *     operationId="Register",
      *
@@ -62,10 +62,6 @@ class AuthController extends Controller
             'password'=>'required|string',
         ]);
 
-
-
-
-
         $user = new User();
         $user->name = $fields['name'];
         $user->userName = $fields['userName'];
@@ -87,7 +83,7 @@ class AuthController extends Controller
     /**
      * @OA\Post(
      *     path="/api/acceso",
-     *     tags={"Auth"},
+     *     tags={"Token"},
      *     summary="Authentificate",
      *     operationId="Login",
      *
