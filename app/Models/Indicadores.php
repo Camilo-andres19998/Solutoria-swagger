@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Indicadores extends Model
 {
-    use HasFactory;
+    //use HasFactory;
 
    // protected $indicador;
-    protected $table = "indicadores";
+    //protected $table = "indicadores";
     protected $fillable = [
           'nombreIndicador','codigoIndicador','unidadMedidaIndicador','valorIndicador','fechaIndicador'
     ];
@@ -57,7 +57,9 @@ class Indicadores extends Model
 
 
 
+
     }
+
 
 
 

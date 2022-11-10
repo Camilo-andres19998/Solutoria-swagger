@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('indicadores', function (Blueprint $table) {
             $table->id();
-            $table->string('nombreIndicador');
-            $table->string('codigoIndicador');
-            $table->string('unidadMedidaIndicador');
+            $table->string('nombreIndicador')->nullable();
+            $table->string('codigoIndicador')->nullable();
+            $table->string('unidadMedidaIndicador')->nullable();
             $table->integer('valorIndicador');
-            $table->string('fechaIndicador');
+            $table->string('fechaIndicador')->nullable();
             //$table->date('fechaIndicador');
             $table->timestamps();
         });
