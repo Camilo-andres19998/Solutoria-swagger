@@ -1,12 +1,22 @@
 
 # php artisan serve
 
-1 - http://127.0.0.1:8000/api/documentation#/
+1 - Documentacion con Swagger
+#
+http://127.0.0.1:8000/api/documentation#/
 
+#
 ![image](https://user-images.githubusercontent.com/111392370/201309254-90d6b6f8-f0d9-437f-b55f-d1e299394f12.png)
 
+#
+2-2- CRUD con Ajax.  http://127.0.0.1:8000/indicadores
 
+![image](https://user-images.githubusercontent.com/111392370/201310862-eb4ce16a-6c0c-4e36-906a-d08e46b5411e.png)
 
+3 - Graficos - http://127.0.0.1:8000/graficos
+
+#
+![image](https://user-images.githubusercontent.com/111392370/201311751-9eb7d740-7219-43dd-a5c2-aac4788197e2.png)
 
 
 
