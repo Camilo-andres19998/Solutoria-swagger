@@ -11,7 +11,7 @@ http://127.0.0.1:8000/api/documentation#/
 #
 2-2- CRUD con Ajax.  http://127.0.0.1:8000/indicadores
 
-![image](https://user-images.githubusercontent.com/111392370/201310862-eb4ce16a-6c0c-4e36-906a-d08e46b5411e.png)
+![image](https://user-images.githubusercontent.com/111392370/201315428-90bfbfe7-8cd5-4eca-9ecc-9ffd431123a7.png)
 
 3 - Graficos - http://127.0.0.1:8000/graficos
 
