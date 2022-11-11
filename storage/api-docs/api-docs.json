@@ -25,7 +25,7 @@
         "/api/registro": {
             "post": {
                 "tags": [
-                    "Auth"
+                    "Token"
                 ],
                 "summary": "Registrate",
                 "operationId": "Register",
@@ -67,7 +67,7 @@
         "/api/acceso": {
             "post": {
                 "tags": [
-                    "Auth"
+                    "Token"
                 ],
                 "summary": "Authentificate",
                 "operationId": "Login",

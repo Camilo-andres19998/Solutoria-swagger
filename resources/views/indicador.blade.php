@@ -20,7 +20,7 @@
                 <th>NOMBRE INDICADOR</th>
                 <th>CODIGO </th>
                 <th>UNIDAD MEDIDA</th>
-                <th>VALOR MEDIDA </th>
+                <th>VALOR  </th>
                 <th>FECHA </th>
                 <th width="300px">Action</th>
 
@@ -76,13 +76,13 @@
                           <div class="form-group">
                         <label class="col-sm-2 control-label">Fecha </label>
                         <div class="col-sm-12">
-                            <textarea id="fechaIndicador" name="fechaIndicador" required="" placeholder="Fecha indicador" class="form-control"></textarea>
+                          <input type="date" value="2022-12-01" name="fechaIndicador" id="fechaIndicador"/>
                         </div>
                     </div>
 
 
                     <div class="col-sm-offset-2 col-sm-10">
-                     <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save changes
+                     <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Registrar
                      </button>
                     </div>
                 </form>
@@ -98,7 +98,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+   <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 
 
 
