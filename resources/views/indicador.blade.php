@@ -13,15 +13,15 @@
 <div class="container">
 
     <a class="btn btn-success" href="javascript:void(0)" id="createNewBook">  Nuevo indicador</a>
-    <table class="table table-info table table-responsive table table-bordered data-table">
+    <table class="table table-bordered  table table-info table table-hover data-table">
         <thead>
             <tr>
 
                 <th>NOMBRE INDICADOR</th>
-                <th>CODIGO INDICADOR</th>
-                <th>UNIDAD</th>
-                <th>VALOR</th>
-                <th>FECHA</th>
+                <th>CODIGO </th>
+                <th>UNIDAD MEDIDA</th>
+                <th>VALOR MEDIDA </th>
+                <th>FECHA </th>
                 <th width="300px">Action</th>
 
             </tr>
@@ -31,8 +31,8 @@
     </table>
 </div>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="ajaxModel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="ajaxModel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="modelHeading"></h4>
@@ -42,15 +42,15 @@
                 <form id="bookForm" name="bookForm" class="form-horizontal">
                    <input type="hidden" name="indicador_id" id="indicador_id">
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Nombre indicador</label>
+                        <label for="name" class="col-sm-2 control-label">Nombre </label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="nombreIndicador" name="nombreIndicador" placeholder="Enter Title" value="" maxlength="50" required="">
+                            <input type="text" class="form-control" id="nombreIndicador" name="nombreIndicador" placeholder="Nombre indicador" value="" maxlength="50" required="">
                         </div>
                     </div>
 
 
                     <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Codiog indicador</label>
+                        <label for="name" class="col-sm-2 control-label">Codigo </label>
                         <div class="col-sm-12">
                             <input type="text" class="form-control" id="codigoIndicador" name="codigoIndicador" placeholder="Codigo indicador" value="" maxlength="50" required="">
                         </div>
@@ -58,23 +58,23 @@
 
 
                             <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Unidad indicador</label>
+                        <label for="name" class="col-sm-2 control-label">Unidad medida </label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="unidadMedidaIndicador" name="unidadMedidaIndicador" placeholder="Codigo indicador" value="" maxlength="50" required="">
+                            <input type="text" class="form-control" id="unidadMedidaIndicador" name="unidadMedidaIndicador" placeholder="Unidad indicador" value="" maxlength="50" required="">
                         </div>
                     </div>
 
 
                           <div class="form-group">
-                        <label class="col-sm-2 control-label">Valor Indicador</label>
+                        <label class="col-sm-2 control-label">Valor </label>
                         <div class="col-sm-12">
-                            <textarea id="valorIndicador" name="valorIndicador" required="" placeholder="Valor indicador" class="form-control"></textarea>
+                            <input id="valorIndicador" name="valorIndicador" required="" placeholder="Valor indicador" class="form-control" value="" maxlength="50" required="" >
                         </div>
                     </div>
 
 
                           <div class="form-group">
-                        <label class="col-sm-2 control-label">Fecha indicador</label>
+                        <label class="col-sm-2 control-label">Fecha </label>
                         <div class="col-sm-12">
                             <textarea id="fechaIndicador" name="fechaIndicador" required="" placeholder="Fecha indicador" class="form-control"></textarea>
                         </div>
@@ -97,6 +97,7 @@
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 
@@ -143,6 +144,7 @@
     $('body').on('click', '.editIndicador', function () {
       var indicador_id = $(this).data('id');
       $.get("{{ route('indicadores.index') }}" +'/' + indicador_id +'/edit', function (data) {
+
           $('#modelHeading').html("Editar Indicador");
           $('#saveBtn').val("edit-book");
           $('#ajaxModel').modal('show');
@@ -152,7 +154,6 @@
           $('#unidadMedidaIndicador').val(data.unidadMedidaIndicador);
           $('#valorIndicador').val(data.valorIndicador);
           $('#fechaIndicador').val(data.fechaIndicador);
-
       })
    });
 
@@ -182,10 +183,12 @@
 
 
 
-    $('body').on('click', '.deleteIndicador', function () {
+ $('body').on('click', '.deleteIndicador', function () {
 
         var indicador_id = $(this).data("id");
-        confirm("¿Estás segura de que quieres eliminar? !");
+       swal({  icon: "success",
+        title: "Eliminado correctamente",
+        });
 
         $.ajax({
             type: "DELETE",
@@ -194,14 +197,12 @@
                 table.draw();
             },
             error: function (data) {
-                console.log('Error:', data);
+                console.log('Error:',data);
             }
         });
     });
 
   });
-
-
 
 </script>
 </body>

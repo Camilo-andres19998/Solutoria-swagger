@@ -24,9 +24,9 @@ class IndicadorController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
 
-                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm editIndicador">Edit</a>';
+                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Editar" class="edit btn btn-primary btn editIndicador">Editar</a>';
 
-                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm deleteIndicador">Delete</a>';
+                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Eliminar" class="btn btn-danger btn deleteIndicador">Eliminar</a>';
 
                             return $btn;
                     })
@@ -37,8 +37,7 @@ class IndicadorController extends Controller
         return view('indicador',compact('indicadores'));
     }
 
-
-    /**
+   /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -46,24 +45,26 @@ class IndicadorController extends Controller
      */
     public function store(Request $request)
     {
-        // do validation
-        Indicadores::create($request->all());
-        return ['success' => true, 'message' => 'Inserted Successfully'];
+        Indicadores::updateOrCreate(['id' => $request->indicador_id],
+                ['nombreIndicador' => $request->nombreIndicador, 'codigoIndicador' => $request->codigoIndicador, 'unidadMedidaIndicador' => $request->unidadMedidaIndicador, 'valorIndicador' => $request->valorIndicador, 'fechaIndicador' => $request->fechaIndicador]);
+
+        return response()->json(['success'=>'Book saved successfully.']);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Indicadores
+     * @param  \App\Indicadores  $book
      * @return \Illuminate\Http\Response
      */
-
-
     public function edit($id)
     {
         $indicador = Indicadores::find($id);
         return response()->json($indicador);
     }
+
 
 
     /**
