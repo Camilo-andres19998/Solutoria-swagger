@@ -15,7 +15,7 @@ class IndicadorController extends Controller
      */
     public function index(Request $request)
     {
-
+       
         $indicadores = Indicadores::latest()->get();
 
         if ($request->ajax()) {
