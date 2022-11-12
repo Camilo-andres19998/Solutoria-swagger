@@ -15,7 +15,7 @@ class Indicadores extends Model
           'nombreIndicador','codigoIndicador','unidadMedidaIndicador','valorIndicador','fechaIndicador'
     ];
 
-    public $timestamps = false;
+    //public $timestamps = false;
     /**
      * @param array $attributes
      * @return Indicadores

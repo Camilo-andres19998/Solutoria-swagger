@@ -1,4 +1,5 @@
 <!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -9,35 +10,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 
+
 <br/>
     <title>Solutoria Grafico</title>
   </head>
 
-<body style="background-color: ivory;">
- <div class="input-daterange datepicker row align-items-center">
-    <div class="col">
-        <div class="form-group">
-           <div class="input-group date" data-provide="datepicker">
-                    <div class="input-group-addon">
-                  <span class="glyphicon glyphicon-th"></span>
-                </div>
-                <input class="form-control" placeholder="Fecha inicio" id="startDate" type="text" value="12-12-2022">
-            </div>
-        </div>
-    </div>
 
-    <div class="col">
-        <div class="form-group">
-            <div class="input-group date" data-provide="datepicker">
-                 <div class="input-group-addon">
-                 <span class="glyphicon glyphicon-th"></span>
-                </div>
-                <input class="form-control" placeholder="Fecha final" id="endDate" type="text" value="12-12-2022">
-            </div>
-        </div>
+
+
+
     </div>
-</div>
-    </section>
+</section>
 
 
 </body>
@@ -55,14 +38,14 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
 
-   <script src="/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
    <script src="https://code.highcharts.com/highcharts.js"></script>
    <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -70,6 +53,25 @@
    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 
+   <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <!-- Datepicker -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Datatables -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/r-2.2.3/datatables.min.js">
+    </script>
+    <!-- Momentjs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 
 
@@ -181,12 +183,12 @@ Highcharts.chart('container', {
 });
 
 
-</script>
 
-    <script type="text/javascript">
-        $(function() {
-            $('#fechData').datepicker();
-        });
+
+
+
+
+
     </script>
 
   </body>

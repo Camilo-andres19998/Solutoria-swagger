@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\IndicadorController;
-
+use App\Http\Controllers\ReportesController;
 use App\Http\Controllers\IndicadorControllerSeeder;
 
 Route::get('/', function () {
@@ -27,3 +27,8 @@ Route::resource('indicadores', IndicadorController::class);
 Route::get('graficos',[IndicadorControllerSeeder::class,'index']);
 
 
+
+Route::get('reportes', [ReportesController::class, 'index'])->name('reportes');
+Route::get('reportes/records', [ReportesController::class, 'records'])->name('reportes/records');
+
+Route::redirect('/', 'reportes');
