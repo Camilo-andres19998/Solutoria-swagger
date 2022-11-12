@@ -18,9 +18,9 @@ http://127.0.0.1:8000/api/documentation#/
 #
 ![image](https://user-images.githubusercontent.com/111392370/201311751-9eb7d740-7219-43dd-a5c2-aac4788197e2.png)
 
-4 - Filtro - reportes en Formato - .pdf, .xlxs,etc
+4 - Filtro - reportes en Formato - .pdf, .xlxs,etc - http://127.0.0.1:8000/reportes
 
-     http://127.0.0.1:8000/reportes
+     
 
 
 ![image](https://user-images.githubusercontent.com/111392370/201461439-6b44eaee-df5f-437c-8413-0b0888e0d4c4.png)
