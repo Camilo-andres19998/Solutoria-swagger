@@ -158,7 +158,7 @@
                             {
                                 "data": "codigoIndicador",
                                 "render": function(data, type, row, meta) {
-                                    return `${row.codigoIndicador}th `;
+                                    return `${row.codigoIndicador} `;
                                 }
                             },
                             {
